@@ -10,5 +10,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/trials', to: 'trials#index'
+  resources :trials, param: :slug, only: [:index, :show]
 end

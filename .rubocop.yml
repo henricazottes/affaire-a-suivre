@@ -1,2 +1,4 @@
 require: rubocop-rails
 
+Style/SymbolArray:
+  Enabled: false

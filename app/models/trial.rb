@@ -7,4 +7,8 @@ class Trial < ApplicationRecord
 
   has_many :people_trials, dependent: nil, class_name: 'PersonTrial'
   has_many :people, through: :people_trials
+
+  def to_param
+    slug
+  end
 end
