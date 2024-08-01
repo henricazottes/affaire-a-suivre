@@ -11,15 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_08_01_173742) do
-  create_table "cases", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_cases_on_slug", unique: true
-  end
-
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "slug"
@@ -31,14 +22,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_01_173742) do
     t.index ["slug"], name: "index_people_on_slug", unique: true
   end
 
-  create_table "people_cases", force: :cascade do |t|
+  create_table "people_trials", force: :cascade do |t|
     t.string "status"
     t.integer "person_id"
-    t.integer "case_id"
+    t.integer "trial_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["case_id"], name: "index_people_cases_on_case_id"
-    t.index ["person_id"], name: "index_people_cases_on_person_id"
+    t.index ["person_id"], name: "index_people_trials_on_person_id"
+    t.index ["trial_id"], name: "index_people_trials_on_trial_id"
+  end
+
+  create_table "trials", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_trials_on_slug", unique: true
   end
 
   create_table "updates", force: :cascade do |t|

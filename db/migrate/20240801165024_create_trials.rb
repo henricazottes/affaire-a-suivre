@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# Create Cases
-class CreateCases < ActiveRecord::Migration[7.1]
+# Create Trials
+class CreateTrials < ActiveRecord::Migration[7.1]
   def change
-    create_table :cases do |t|
+    create_table :trials do |t|
       t.string :title
       t.text :description
       t.string :slug
@@ -11,6 +11,6 @@ class CreateCases < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :cases, :slug, unique: true
+    add_index :trials, :slug, unique: true
   end
 end

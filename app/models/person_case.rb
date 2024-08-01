@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# PersonCase model
-class PersonCase < ApplicationRecord
-  self.table_name = 'people_cases'
+# PersonTrial model
+class PersonTrial < ApplicationRecord
+  self.table_name = 'people_trials'
 
   belongs_to :person
   belongs_to :case
