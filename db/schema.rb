@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_01_172304) do
     t.index ["slug"], name: "index_cases_on_slug", unique: true
   end
 
-  create_table "persons", force: :cascade do |t|
+  create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.string "x_handle"
@@ -28,7 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_01_172304) do
     t.text "presentation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_persons_on_slug", unique: true
+    t.index ["slug"], name: "index_people_on_slug", unique: true
   end
 
   create_table "updates", force: :cascade do |t|
