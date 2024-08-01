@@ -2,6 +2,8 @@
 
 # PersonCase model
 class PersonCase < ApplicationRecord
-  validates :case, presence: true
-  validates :person, presence: true
+  self.table_name = 'people_cases'
+
+  belongs_to :person
+  belongs_to :case
 end
