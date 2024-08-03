@@ -1,0 +1,12 @@
+<h1>Nouvelles</h1>
+
+<ul>
+  <% @updates.each do |update| %>
+    <li>
+      <%= update.title %>
+      <%= link_to 'Show', update %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Ajouter une nouvelle", new_update_path %>

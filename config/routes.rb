@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   resources :trials, param: :slug, only: [:index, :show, :new, :create, :edit, :update]
   resources :people, param: :slug, only: [:index, :show, :new, :create, :edit, :update]
+  resources :updates, param: :slug, only: [:index, :show, :new, :create, :edit, :update]
 end
