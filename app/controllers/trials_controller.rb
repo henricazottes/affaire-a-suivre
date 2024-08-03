@@ -41,6 +41,6 @@ class TrialsController < ApplicationController
   private
 
   def trial_params
-    params.require(:trial).permit(:title, :slug, :description)
+    params.require(:trial).permit(:title, :slug, :description, person_ids: [])
   end
 end

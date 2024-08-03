@@ -1,4 +1,16 @@
 <h1><%= @person.name %></h1>
 <p><%= @person.presentation %></p>
 
+<h2>Affaires</h2>
+  <% if @person.trials.blank? %>
+    <p>Cette personne n'a pas d'affaires connues.</p>
+  <% else %>
+  <ul>
+    <% @person.trials.each do |trial| %>
+    <li><%= link_to trial.title, trial %></li>
+    <% end %>
+</ul>
+<% end %>
+
+
 <%= link_to "Modifier", edit_person_path %>

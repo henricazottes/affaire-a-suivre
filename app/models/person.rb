@@ -6,7 +6,7 @@ class Person < ApplicationRecord
   validates :slug, presence: true, uniqueness: true
 
   has_many :people_trials, dependent: nil, class_name: 'PersonTrial'
-  has_many :cases, through: :people_trials
+  has_many :trials, through: :people_trials
 
   def to_param
     slug
