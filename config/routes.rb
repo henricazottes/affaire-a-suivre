@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :trials, param: :slug, only: [:index, :show, :new, :create, :edit, :update]
+  resources :people, param: :slug, only: [:index, :show, :new, :create, :edit, :update]
 end

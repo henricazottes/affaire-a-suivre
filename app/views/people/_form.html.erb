@@ -1,0 +1,36 @@
+<%= form_with model: person do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% person.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :slug %><br>
+    <%= form.text_field :slug %>
+    <% person.errors.full_messages_for(:slug).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :x_handle %><br>
+    <%= form.text_field :x_handle %>
+  </div>
+
+  <div>
+    <%= form.label :wikipedia_url %><br>
+    <%= form.text_field :wikipedia_url %>
+  </div>
+
+  <div>
+    <%= form.label :presentation %><br>
+    <%= form.text_area :presentation %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
