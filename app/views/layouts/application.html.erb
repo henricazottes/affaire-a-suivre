@@ -11,6 +11,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-sm py-3 m" style="max-width: 960px">
+      <%= render 'layouts/menu' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
